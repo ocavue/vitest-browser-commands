@@ -45,9 +45,6 @@
     "typecheck": "tsc -b",
     "prepare:playwright": "playwright install"
   },
-  "dependencies": {
-    "@vitest/browser": "^4.0.3"
-  },
   "peerDependencies": {
     "@vitest/browser-playwright": "^4.0.3",
     "vitest": "^4.0.3"
