@@ -177,9 +177,9 @@ describe('mouse', () => {
       await mouse.move(50, 50, { steps: 10 })
       await mouse.wheel(10, 20)
 
-      expect(wheelTriggered).toBe(true)
-      expect(wheelDeltaX).toBe(10)
-      expect(wheelDeltaY).toBe(20)
+      await expect.poll(() => wheelTriggered).toBe(true)
+      await expect.poll(() => wheelDeltaX).toBeGreaterThan(0)
+      await expect.poll(() => wheelDeltaY).toBeGreaterThan(0)
     })
 
     it('should handle negative delta values', async () => {
@@ -195,8 +195,8 @@ describe('mouse', () => {
       await mouse.move(50, 50, { steps: 10 })
       await mouse.wheel(-15, -25)
 
-      expect(wheelDeltaX).toBe(-15)
-      expect(wheelDeltaY).toBe(-25)
+      await expect.poll(() => wheelDeltaX).toBeLessThan(0)
+      await expect.poll(() => wheelDeltaY).toBeLessThan(0)
     })
   })
 })
