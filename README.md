@@ -35,7 +35,7 @@ In your test code, you can import various objects from `vitest-browser-commands/
 For example, you can import the `mouse` object to interact with the mouse. See the API section below for more details.
 
 ```ts
-// tests/mouse.test.ts
+// tests/browser.test.ts
 import { it } from 'vitest'
 import { mouse } from 'vitest-browser-commands/playwright'
 import { render } from './my-render-function.js'
@@ -66,7 +66,25 @@ _At the moment, only the Mouse API from Playwright is supported, as that's the o
 The `mouse` object is a wrapper around the Playwright [Mouse API](https://playwright.dev/docs/api/class-mouse). It has the identical API as the Playwright Mouse API, but it is wrapped in a way that it can be run in the browser.
 
 ```ts
+// tests/browser.test.ts
 import { mouse } from 'vitest-browser-commands/playwright'
+
+await mouse.click(x, y)
+await mouse.click(x, y, options)
+
+await mouse.dblclick(x, y)
+await mouse.dblclick(x, y, options)
+
+await mouse.down()
+await mouse.down(options)
+
+await mouse.move(x, y)
+await mouse.move(x, y, options)
+
+await mouse.up()
+await mouse.up(options)
+
+await mouse.wheel(deltaX, deltaY)
 ```
 
 ## License
