@@ -26,7 +26,7 @@ declare module 'vitest/browser' {
  * interact with the mouse. It will call the appropriate Playwright API under
  * the hood.
  */
-export const mouse: Partial<Mouse> = {
+export const mouse: Mouse = {
   click: commands.playwrightMouseClick,
   dblclick: commands.playwrightMouseDblclick,
   down: commands.playwrightMouseDown,
