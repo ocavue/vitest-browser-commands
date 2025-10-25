@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/ocavue/vitest-browser-commands/compare/v0.1.0...v0.1.1) (2025-10-25)
+
+
+### Bug Fixes
+
+* add playwright export in package.json ([#7](https://github.com/ocavue/vitest-browser-commands/issues/7)) ([6f35e20](https://github.com/ocavue/vitest-browser-commands/commit/6f35e2089cf8556b9c4c54863e072334a9b22fba))
+
 ## 0.1.0 (2025-10-25)
 
 
