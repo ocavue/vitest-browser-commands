@@ -1,6 +1,6 @@
 import { commands } from 'vitest/browser'
 
-import { processPlaywrightPosition } from '../helpers'
+import { IframeTransform } from '../helpers'
 
 import type { PlaywrightMouseClick } from './mouse-click.node'
 
@@ -11,6 +11,7 @@ declare module 'vitest/browser' {
 }
 
 export const playwrightMouseClick: PlaywrightMouseClick = (x, y, options) => {
-  const [processedX, processedY] = processPlaywrightPosition(x, y)
+  const transform = new IframeTransform()
+  const [processedX, processedY] = transform.fromIframeToPage(x, y)
   return commands.playwrightMouseClick(processedX, processedY, options)
 }
