@@ -19,14 +19,8 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./playwright": {
-      "types": "./dist/playwright/index.d.ts",
-      "import": "./dist/playwright/index.js"
-    }
+    ".": "./dist/index.js",
+    "./playwright": "./dist/playwright.js"
   },
   "typesVersions": {
     "*": {
