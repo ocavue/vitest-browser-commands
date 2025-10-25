@@ -24,15 +24,17 @@
       "import": "./dist/index.js"
     },
     "./playwright": {
-      "types": "./dist/playwright/index.d.ts",
-      "import": "./dist/playwright/index.js"
+      "types": "./dist/playwright.d.ts",
+      "import": "./dist/playwright.js"
     }
   },
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/*",
         "./dist/index.d.ts"
+      ],
+      "playwright": [
+        "./dist/playwright.d.ts"
       ]
     }
   },
