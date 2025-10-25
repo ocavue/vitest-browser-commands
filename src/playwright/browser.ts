@@ -1,23 +1,5 @@
-import { commands } from 'vitest/browser'
-
-import type { PlaywrightMouseClick } from './commands/mouse-click'
-import type { PlaywrightMouseDblclick } from './commands/mouse-dblclick'
-import type { PlaywrightMouseDown } from './commands/mouse-down'
-import type { PlaywrightMouseMove } from './commands/mouse-move'
-import type { PlaywrightMouseUp } from './commands/mouse-up'
-import type { PlaywrightMouseWheel } from './commands/mouse-wheel'
+import { playwrightMouseClick } from './commands/mouse-click.browser'
 import type { Mouse } from './types'
-
-declare module 'vitest/browser' {
-  interface BrowserCommands {
-    playwrightMouseClick: PlaywrightMouseClick
-    playwrightMouseDblclick: PlaywrightMouseDblclick
-    playwrightMouseDown: PlaywrightMouseDown
-    playwrightMouseMove: PlaywrightMouseMove
-    playwrightMouseUp: PlaywrightMouseUp
-    playwrightMouseWheel: PlaywrightMouseWheel
-  }
-}
 
 /**
  * A wrapper around the Playwright [Mouse API](https://playwright.dev/docs/api/class-mouse).
@@ -27,12 +9,12 @@ declare module 'vitest/browser' {
  * the hood.
  */
 export const mouse: Mouse = {
-  click: commands.playwrightMouseClick,
-  dblclick: commands.playwrightMouseDblclick,
-  down: commands.playwrightMouseDown,
-  move: commands.playwrightMouseMove,
-  up: commands.playwrightMouseUp,
-  wheel: commands.playwrightMouseWheel,
+  click: playwrightMouseClick,
+  dblclick: {} as any,
+  down: {} as any,
+  move: {} as any,
+  up: {} as any,
+  wheel: {} as any,
 }
 
 export { type Mouse }
