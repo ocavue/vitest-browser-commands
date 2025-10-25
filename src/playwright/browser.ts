@@ -1,10 +1,12 @@
 import { commands } from 'vitest/browser'
 
+import type { PlaywrightMouseDown } from './commands/mouse-down'
 import type { PlaywrightMouseUp } from './commands/mouse-up'
 import type { Mouse } from './types'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {
+    playwrightMouseDown: PlaywrightMouseDown
     playwrightMouseUp: PlaywrightMouseUp
   }
 }
@@ -17,6 +19,7 @@ declare module 'vitest/browser' {
  * the hood.
  */
 export const mouse: Partial<Mouse> = {
+  down: commands.playwrightMouseDown,
   up: commands.playwrightMouseUp,
 }
 

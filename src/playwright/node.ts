@@ -1,5 +1,6 @@
 import type { Plugin } from 'vitest/config'
 
+import { playwrightMouseDown } from './commands/mouse-down'
 import { playwrightMouseUp } from './commands/mouse-up'
 
 /**
@@ -13,6 +14,7 @@ export function playwrightCommands(): Plugin {
         test: {
           browser: {
             commands: {
+              playwrightMouseDown,
               playwrightMouseUp,
             },
           },
