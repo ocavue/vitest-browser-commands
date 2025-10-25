@@ -10,4 +10,3 @@ export const playwrightMouseUp: BrowserCommand<
 > = (ctx, ...args) => {
   return ctx.page.mouse.up(...args)
 }
-
