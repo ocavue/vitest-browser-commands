@@ -7,38 +7,53 @@ describe('mouse', () => {
     const container = prepareElement('test-container')
     container.style.width = '100px'
     container.style.height = '100px'
-    container.style.backgroundColor = 'red'
+    container.style.backgroundColor = 'lightblue'
     container.style.position = 'absolute'
     container.style.top = '0'
     container.style.left = '0'
     container.style.zIndex = '1000'
 
-    let isMouseDown = false
-    let isMouseUp = false
+    let isPointerDown = false
+    let isPointerUp = false
+    let isPointerMove = false
 
-    container.addEventListener('mousedown', () => {
-      isMouseDown = true
+    container.addEventListener('pointerdown', () => {
+      isPointerDown = true
     })
-    container.addEventListener('mouseup', () => {
-      isMouseUp = true
+    container.addEventListener('pointerup', () => {
+      isPointerUp = true
+    })
+    container.addEventListener('pointermove', () => {
+      isPointerMove = true
     })
 
-    
-    await mouse.move(200, 200)
+    // Clicking the mouse outside the container should not trigger a mouse down or up event
+    await mouse.move(200, 200, { steps: 10 })
     await mouse.down()
     await mouse.up()
-    expect(isMouseDown).toBe(false)
-    expect(isMouseUp).toBe(false)
+    expect(isPointerDown).toBe(false)
+    expect(isPointerUp).toBe(false)
 
-    await mouse.move(50, 50)
+    // Pressing down the mouse should trigger a mouse down event
+    await mouse.move(50, 50, { steps: 10 })
     await mouse.down()
-    expect(isMouseDown).toBe(true)
-    expect(isMouseUp).toBe(false)
+    expect(isPointerDown).toBe(true)
+    expect(isPointerUp).toBe(false)
 
+    // Releasing the mouse should trigger a mouse up event
     await mouse.up()
-    expect(isMouseDown).toBe(true)
-    expect(isMouseUp).toBe(true)
+    expect(isPointerUp).toBe(true)
 
+    // Moving inside the container should trigger a mouse move event
+    isPointerMove = false
+    await mouse.move(20, 20, { steps: 10 })
+    expect(isPointerMove).toBe(true)
+
+    // Moving outside the container should not trigger a mouse move event
+    await mouse.move(150, 150, { steps: 10 })
+    isPointerMove = false
+    await mouse.move(200, 200, { steps: 10 })
+    expect(isPointerMove).toBe(false)
   })
 })
 

@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@vitest/browser':
+        specifier: ^4.0.3
+        version: 4.0.3(vite@7.1.12(@types/node@20.19.23)(jiti@2.6.1))(vitest@4.0.3)
     devDependencies:
       '@ocavue/eslint-config':
         specifier: ^3.6.0

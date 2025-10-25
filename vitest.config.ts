@@ -2,7 +2,7 @@
 import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
 
-import { playwrightCommands } from 'vitest-browser-commands'
+import { playwrightCommands } from './src/index'
 
 export default defineConfig({
   plugins: [playwrightCommands()],

@@ -44,6 +44,9 @@
     "test": "vitest",
     "typecheck": "tsc -b"
   },
+  "dependencies": {
+    "@vitest/browser": "^4.0.3"
+  },
   "peerDependencies": {
     "@vitest/browser-playwright": "^4.0.3",
     "vitest": "^4.0.3"
