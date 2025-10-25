@@ -57,6 +57,8 @@ it('should be able to interact with the mouse', async () => {
 
 ## API
 
+_At the moment, only the Mouse API from Playwright is supported, as that's the one I required for testing drag-and-drop functionality. Please let me know if you need support for other APIs, such as Keyboard for WebdriverIO._
+
 ### Playwright
 
 #### `mouse`

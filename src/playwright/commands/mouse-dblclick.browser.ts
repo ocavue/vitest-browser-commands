@@ -10,7 +10,11 @@ declare module 'vitest/browser' {
   }
 }
 
-export const playwrightMouseDblclick: PlaywrightMouseDblclick = (x, y, options) => {
+export const playwrightMouseDblclick: PlaywrightMouseDblclick = (
+  x,
+  y,
+  options,
+) => {
   const transform = new IframeTransform()
   const [processedX, processedY] = transform.fromIframeToPage(x, y)
   return commands.playwrightMouseDblclick(processedX, processedY, options)
