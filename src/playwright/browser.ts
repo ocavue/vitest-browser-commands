@@ -1,4 +1,9 @@
 import { playwrightMouseClick } from './commands/mouse-click.browser'
+import { playwrightMouseDblclick } from './commands/mouse-dblclick.browser'
+import { playwrightMouseDown } from './commands/mouse-down.browser'
+import { playwrightMouseMove } from './commands/mouse-move.browser'
+import { playwrightMouseUp } from './commands/mouse-up.browser'
+import { playwrightMouseWheel } from './commands/mouse-wheel.browser'
 import type { Mouse } from './types'
 
 /**
@@ -10,11 +15,11 @@ import type { Mouse } from './types'
  */
 export const mouse: Mouse = {
   click: playwrightMouseClick,
-  dblclick: {} as any,
-  down: {} as any,
-  move: {} as any,
-  up: {} as any,
-  wheel: {} as any,
+  dblclick: playwrightMouseDblclick,
+  down: playwrightMouseDown,
+  move: playwrightMouseMove,
+  up: playwrightMouseUp,
+  wheel: playwrightMouseWheel,
 }
 
 export { type Mouse }
