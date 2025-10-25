@@ -1,7 +1,10 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: {
+    index: 'src/index.ts',
+    playwright: 'src/playwright/browser.ts',
+  },
   format: ['esm'],
   dts: { build: true },
 })

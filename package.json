@@ -44,15 +44,28 @@
     "test": "vitest",
     "typecheck": "tsc -b"
   },
+  "peerDependencies": {
+    "@vitest/browser-playwright": "^4.0.3",
+    "vitest": "^4.0.3"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    },
+    "@vitest/browser-playwright": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@ocavue/eslint-config": "^3.6.0",
     "@ocavue/tsconfig": "^0.5.0",
     "@types/node": "^20.19.10",
+    "@vitest/browser-playwright": "^4.0.3",
     "eslint": "^9.38.0",
     "prettier": "^3.6.2",
     "tsdown": "^0.15.9",
     "typescript": "^5.9.3",
     "vite": "^7.1.12",
-    "vitest": "^4.0.2"
+    "vitest": "^4.0.3"
   }
 }
