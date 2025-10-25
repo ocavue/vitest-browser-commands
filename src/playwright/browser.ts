@@ -1,13 +1,21 @@
 import { commands } from 'vitest/browser'
 
+import type { PlaywrightMouseClick } from './commands/mouse-click'
+import type { PlaywrightMouseDblclick } from './commands/mouse-dblclick'
 import type { PlaywrightMouseDown } from './commands/mouse-down'
+import type { PlaywrightMouseMove } from './commands/mouse-move'
 import type { PlaywrightMouseUp } from './commands/mouse-up'
+import type { PlaywrightMouseWheel } from './commands/mouse-wheel'
 import type { Mouse } from './types'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {
+    playwrightMouseClick: PlaywrightMouseClick
+    playwrightMouseDblclick: PlaywrightMouseDblclick
     playwrightMouseDown: PlaywrightMouseDown
+    playwrightMouseMove: PlaywrightMouseMove
     playwrightMouseUp: PlaywrightMouseUp
+    playwrightMouseWheel: PlaywrightMouseWheel
   }
 }
 
@@ -19,12 +27,12 @@ declare module 'vitest/browser' {
  * the hood.
  */
 export const mouse: Partial<Mouse> = {
-  // click: todo,
-  // dblclick: todo,
+  click: commands.playwrightMouseClick,
+  dblclick: commands.playwrightMouseDblclick,
   down: commands.playwrightMouseDown,
-  // move: todo,
+  move: commands.playwrightMouseMove,
   up: commands.playwrightMouseUp,
-  // wheel: todo,
+  wheel: commands.playwrightMouseWheel,
 }
 
 export { type Mouse }
