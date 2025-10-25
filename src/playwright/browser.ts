@@ -19,8 +19,12 @@ declare module 'vitest/browser' {
  * the hood.
  */
 export const mouse: Partial<Mouse> = {
+  // click: todo,
+  // dblclick: todo,
   down: commands.playwrightMouseDown,
+  // move: todo,
   up: commands.playwrightMouseUp,
+  // wheel: todo,
 }
 
 export { type Mouse }
