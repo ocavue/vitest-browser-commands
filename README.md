@@ -4,7 +4,7 @@
 
 [Vitest](https://vitest.dev/) is a test runner for JavaScript and TypeScript. [Vitest browser mode](https://vitest.dev/guide/browser/) allows you to run your tests in the browser natively, and it provides an unified API for different underlying end-to-end providers like [Playwright](https://playwright.dev/) and [WebdriverIO](https://webdriver.io/).
 
-However, sometimes you want to invoke the underlying provider's API directly, for example, you want to invoke the Playwright API directly to interact with mouse, which is not supported yet by Vitest browser mode.
+However, sometimes you want to invoke the underlying provider's API directly, for example, you want to invoke the Playwright API directly to interact with mouse or keyboard, which is not supported yet by Vitest browser mode.
 
 This packages provides a set of [custom commands](https://vitest.dev/guide/browser/commands.html) for Vitest browser mode that allows you to invoke the underlying provider's API directly. Currently, it only supports the Playwright provider, but it can be easily extended to support other providers. Welcome contributions!
 
@@ -32,12 +32,12 @@ export default defineConfig({
 ```
 
 In your test code, you can import various objects from `vitest-browser-commands/playwright` to interact with the browser.
-For example, you can import the `mouse` object to interact with the mouse. See the API section below for more details.
+For example, you can import the `mouse` object to interact with the mouse or the `keyboard` object to interact with the keyboard. See the API section below for more details.
 
 ```ts
 // tests/browser.test.ts
 import { it } from 'vitest'
-import { mouse } from 'vitest-browser-commands/playwright'
+import { mouse, keyboard } from 'vitest-browser-commands/playwright'
 import { render } from './my-render-function.js'
 
 it('should be able to interact with the mouse', async () => {
@@ -53,11 +53,20 @@ it('should be able to interact with the mouse', async () => {
   await mouse.move(0, 0)
   await mouse.up()
 })
+
+it('should be able to interact with the keyboard', async () => {
+  // mount DOM elements
+  render()
+
+  // type text into a focused input
+  await keyboard.type('Hello World')
+
+  // press Enter key
+  await keyboard.press('Enter')
+})
 ```
 
 ## API
-
-_At the moment, only the Mouse API from Playwright is supported, as that's the one I required for testing drag-and-drop functionality. Please let me know if you need support for other APIs, such as Keyboard for WebdriverIO._
 
 ### Playwright
 
@@ -85,6 +94,27 @@ await mouse.up()
 await mouse.up(options)
 
 await mouse.wheel(deltaX, deltaY)
+```
+
+#### `keyboard`
+
+The `keyboard` object is a wrapper around the Playwright [Keyboard API](https://playwright.dev/docs/api/class-keyboard). It has the identical API as the Playwright Keyboard API, but it is wrapped in a way that it can be run in the browser.
+
+```ts
+// tests/browser.test.ts
+import { keyboard } from 'vitest-browser-commands/playwright'
+
+await keyboard.down(key)
+
+await keyboard.up(key)
+
+await keyboard.press(key)
+await keyboard.press(key, options)
+
+await keyboard.type(text)
+await keyboard.type(text, options)
+
+await keyboard.insertText(text)
 ```
 
 ## License

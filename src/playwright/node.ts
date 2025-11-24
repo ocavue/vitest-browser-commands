@@ -1,5 +1,10 @@
 import type { Plugin } from 'vitest/config'
 
+import { playwrightKeyboardDown } from './commands/keyboard-down.node'
+import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.node'
+import { playwrightKeyboardPress } from './commands/keyboard-press.node'
+import { playwrightKeyboardType } from './commands/keyboard-type.node'
+import { playwrightKeyboardUp } from './commands/keyboard-up.node'
 import { playwrightMouseClick } from './commands/mouse-click.node'
 import { playwrightMouseDblclick } from './commands/mouse-dblclick.node'
 import { playwrightMouseDown } from './commands/mouse-down.node'
@@ -18,6 +23,11 @@ export function playwrightCommands(): Plugin {
         test: {
           browser: {
             commands: {
+              playwrightKeyboardDown,
+              playwrightKeyboardInsertText,
+              playwrightKeyboardPress,
+              playwrightKeyboardType,
+              playwrightKeyboardUp,
               playwrightMouseClick,
               playwrightMouseDblclick,
               playwrightMouseDown,
