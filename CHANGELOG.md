@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/ocavue/vitest-browser-commands/compare/v0.1.2...v0.2.0) (2025-11-24)
+
+
+### Features
+
+* add playwright keyboard API ([#13](https://github.com/ocavue/vitest-browser-commands/issues/13)) ([5f38bd5](https://github.com/ocavue/vitest-browser-commands/commit/5f38bd53a89c25d872a774b28f1ad50fd6f3ad73))
+
 ## [0.1.2](https://github.com/ocavue/vitest-browser-commands/compare/v0.1.1...v0.1.2) (2025-10-25)
 
 
