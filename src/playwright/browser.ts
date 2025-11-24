@@ -1,3 +1,8 @@
+import { playwrightKeyboardDown } from './commands/keyboard-down.browser'
+import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.browser'
+import { playwrightKeyboardPress } from './commands/keyboard-press.browser'
+import { playwrightKeyboardType } from './commands/keyboard-type.browser'
+import { playwrightKeyboardUp } from './commands/keyboard-up.browser'
 import { playwrightMouseClick } from './commands/mouse-click.browser'
 import { playwrightMouseDblclick } from './commands/mouse-dblclick.browser'
 import { playwrightMouseDown } from './commands/mouse-down.browser'
