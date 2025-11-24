@@ -5,3 +5,5 @@ export type Page = ReturnType<
 >['page']
 
 export type Mouse = Page['mouse']
+
+export type Keyboard = Page['keyboard']
