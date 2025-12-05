@@ -6,7 +6,7 @@
 
 However, sometimes you want to invoke the underlying provider's API directly, for example, you want to invoke the Playwright API directly to interact with mouse or keyboard, which is not supported yet by Vitest browser mode.
 
-This packages provides a set of [custom commands](https://vitest.dev/guide/browser/commands.html) for Vitest browser mode that allows you to invoke the underlying provider's API directly. Currently, it only supports the Playwright provider, but it can be easily extended to support other providers. Welcome contributions!
+This packages provides a set of [custom commands](https://vitest.dev/api/browser/commands.html) for Vitest browser mode that allows you to invoke the underlying provider's API directly. Currently, it only supports the Playwright provider, but it can be easily extended to support other providers. Welcome contributions!
 
 ## Usage
 
