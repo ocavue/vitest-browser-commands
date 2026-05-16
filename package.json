@@ -56,10 +56,10 @@
     "vitest": "^4.0.3"
   },
   "peerDependenciesMeta": {
-    "vitest": {
+    "@vitest/browser-playwright": {
       "optional": true
     },
-    "@vitest/browser-playwright": {
+    "vitest": {
       "optional": true
     }
   },
