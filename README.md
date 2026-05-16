@@ -15,9 +15,9 @@ In your vitest config file, you need to import the `playwrightCommands` plugin f
 ```ts
 // vitest.config.ts
 
-import { defineConfig } from 'vitest/config'
 import { playwright } from '@vitest/browser-playwright'
 import { playwrightCommands } from 'vitest-browser-commands'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [playwrightCommands()],
@@ -38,6 +38,7 @@ For example, you can import the `mouse` object to interact with the mouse or the
 // tests/browser.test.ts
 import { it } from 'vitest'
 import { mouse, keyboard } from 'vitest-browser-commands/playwright'
+
 import { render } from './my-render-function.js'
 
 it('should be able to interact with the mouse', async () => {
