@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/ocavue/vitest-browser-commands/compare/v0.2.0...v0.2.1) (2026-05-16)
+
+
+### Bug Fixes
+
+* update dependencies ([#25](https://github.com/ocavue/vitest-browser-commands/issues/25)) ([e05dac7](https://github.com/ocavue/vitest-browser-commands/commit/e05dac71aae746b3bbbbccbd6b1f510a5c0e1a0f))
+
 ## [0.2.0](https://github.com/ocavue/vitest-browser-commands/compare/v0.1.2...v0.2.0) (2025-11-24)
 
 
