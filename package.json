@@ -2,7 +2,7 @@
   "name": "vitest-browser-commands",
   "type": "module",
   "version": "0.2.0",
-  "packageManager": "pnpm@11.1.2to",
+  "packageManager": "pnpm@11.1.2",
   "description": "A set of custom server commands for Vitest browser mode",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
