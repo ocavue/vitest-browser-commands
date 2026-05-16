@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@ocavue/eslint-config": "^4.5.7",
-    "@ocavue/tsconfig": "^0.6.2",
+    "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^22.19.0",
     "@vitest/browser-playwright": "^4.0.15",
     "eslint": "^10.4.0",
