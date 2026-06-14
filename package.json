@@ -2,7 +2,7 @@
   "name": "vitest-browser-commands",
   "type": "module",
   "version": "0.2.1",
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.6.0",
   "description": "A set of custom server commands for Vitest browser mode",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
@@ -64,16 +64,16 @@
     }
   },
   "devDependencies": {
-    "@ocavue/eslint-config": "^4.5.7",
+    "@ocavue/eslint-config": "^4.6.0",
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^22.19.0",
-    "@vitest/browser-playwright": "^4.1.6",
-    "eslint": "^10.4.0",
+    "@vitest/browser-playwright": "^4.1.8",
+    "eslint": "^10.5.0",
     "playwright": "^1.60.0",
-    "prettier": "^3.8.3",
-    "tsdown": "^0.22.0",
+    "prettier": "^3.8.4",
+    "tsdown": "^0.22.2",
     "typescript": "^6.0.3",
-    "vite": "^8.0.12",
-    "vitest": "^4.1.6"
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
   }
 }
