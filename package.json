@@ -71,7 +71,7 @@
     "eslint": "^10.7.0",
     "playwright": "^1.60.0",
     "prettier": "^3.8.3",
-    "tsdown": "^0.22.0",
+    "tsdown": "^0.22.9",
     "typescript": "^6.0.3",
     "vite": "^8.0.12",
     "vitest": "^4.1.6"
