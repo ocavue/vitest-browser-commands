@@ -1,5 +1,4 @@
 import { PlaywrightBrowserProvider } from "@vitest/browser-playwright";
-
 //#region src/playwright/types.d.ts
 type Page = ReturnType<PlaywrightBrowserProvider['getCommandsContext']>['page'];
 type Mouse = Page['mouse'];
