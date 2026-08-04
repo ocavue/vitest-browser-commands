@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/ocavue/vitest-browser-commands/compare/v0.2.1...v0.3.0) (2026-08-04)
+
+
+### Features
+
+* support vitest v5 beta ([#40](https://github.com/ocavue/vitest-browser-commands/issues/40)) ([e699469](https://github.com/ocavue/vitest-browser-commands/commit/e6994698e48d17e83cd08e98e93e36eafbaaba3a))
+
+
+### Bug Fixes
+
+* read the iframe scale via vitest's API ([#38](https://github.com/ocavue/vitest-browser-commands/issues/38)) ([33ca80e](https://github.com/ocavue/vitest-browser-commands/commit/33ca80ec9db4ef305577df2590c97113c2c6c9c3))
+
 ## [0.2.1](https://github.com/ocavue/vitest-browser-commands/compare/v0.2.0...v0.2.1) (2026-05-16)
 
 
