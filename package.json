@@ -8,7 +8,7 @@
     "build": "pnpm -r run build",
     "lint": "eslint .",
     "fix": "eslint --fix . && prettier --write .",
-    "test": "pnpm -r run test",
+    "test": "pnpm -r run -s test",
     "typecheck": "tsc -b",
     "prepare:playwright": "playwright install"
   },
