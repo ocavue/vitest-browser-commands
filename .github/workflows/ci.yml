@@ -39,7 +39,10 @@ jobs:
 
       - name: List test suites
         id: suites
-        run: echo "suites=$(ls test | jq --raw-input | jq --slurp --compact-output)" >> "$GITHUB_OUTPUT"
+        run: |
+          suites=$(ls test | jq --raw-input | jq --slurp --compact-output)
+          echo "Discovered test suites: $suites"
+          echo "suites=$suites" >> "$GITHUB_OUTPUT"
 
   test:
     runs-on: ${{ matrix.os }}
