@@ -1,5 +1,25 @@
 import { getIframeScale } from '@vitest/browser/locators'
 
+
+function getIframe() {
+  // https://github.com/vitest-dev/vitest/blob/v5.0.0-beta.7/packages/browser/src/client/tester/tester-utils.ts#L258
+  {
+    const iframe = window.frameElement
+    if (iframe) return iframe
+  }
+
+  // https://github.com/vitest-dev/vitest/blob/v4.0.3/packages/browser/src/client/tester/tester-utils.ts#L170
+  {
+    const iframe = window.parent.document.querySelector(`iframe[data-vitest]`)
+    if (iframe) return iframe
+  }
+
+    throw new Error(
+      `Cannot find iframe element. This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
+    )
+
+}
+
 /**
  * A helper class to transform positions between the page and the iframe.
  */
@@ -9,12 +29,7 @@ export class IframeTransform {
   private iframeScale: number
 
   constructor() {
-    const iframe = window.parent.document.querySelector(`iframe[data-vitest]`)
-    if (!iframe) {
-      throw new Error(
-        `Cannot find iframe element. This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
-      )
-    }
+    const iframe = getIframe()
 
     const rect = iframe.getBoundingClientRect()
 
