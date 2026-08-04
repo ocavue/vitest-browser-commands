@@ -44,12 +44,18 @@ importers:
       '@vitest/browser-playwright':
         specifier: ^4.1.10
         version: 4.1.10(playwright@1.62.1)(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))(vitest@4.1.10)
+      playwright:
+        specifier: ^1.62.1
+        version: 1.62.1
       tsdown:
         specifier: ^0.22.14
         version: 0.22.14(typescript@6.0.3)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
+      vite:
+        specifier: ^8.2.0
+        version: 8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0)
       vitest:
         specifier: ^4.1.10
         version: 4.1.10(@types/node@22.19.19)(@vitest/browser-playwright@4.1.10)(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))
@@ -86,6 +92,9 @@ importers:
       '@types/node':
         specifier: ^22.19.0
         version: 22.19.19
+      '@vitest/browser':
+        specifier: 5.0.0-beta.7
+        version: 5.0.0-beta.7(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))(vitest@5.0.0-beta.7)
       '@vitest/browser-playwright':
         specifier: 5.0.0-beta.7
         version: 5.0.0-beta.7(playwright@1.62.1)(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))(vitest@5.0.0-beta.7)
@@ -95,6 +104,9 @@ importers:
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
+      vite:
+        specifier: ^8.2.0
+        version: 8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0)
       vitest:
         specifier: 5.0.0-beta.7
         version: 5.0.0-beta.7(@types/node@22.19.19)(@vitest/browser-playwright@5.0.0-beta.7)(@vitest/ui@5.0.0-beta.7)(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))
