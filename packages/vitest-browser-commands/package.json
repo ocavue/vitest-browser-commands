@@ -40,10 +40,14 @@
     "dev": "tsdown --watch"
   },
   "peerDependencies": {
+    "@vitest/browser": "^4.0.0",
     "@vitest/browser-playwright": "^4.0.3",
     "vitest": "^4.0.3"
   },
   "peerDependenciesMeta": {
+    "@vitest/browser": {
+      "optional": true
+    },
     "@vitest/browser-playwright": {
       "optional": true
     },
@@ -54,6 +58,7 @@
   "devDependencies": {
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^22.19.0",
+    "@vitest/browser": "^4.1.10",
     "@vitest/browser-playwright": "^4.1.10",
     "tsdown": "^0.22.14",
     "typescript": "^6.0.3",
