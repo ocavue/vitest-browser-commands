@@ -1,3 +1,5 @@
+import { getIframeScale } from '@vitest/browser/locators'
+
 /**
  * A helper class to transform positions between the page and the iframe.
  */
@@ -7,7 +9,6 @@ export class IframeTransform {
   private iframeScale: number
 
   constructor() {
-    // The following code is based on https://github.com/vitest-dev/vitest/blob/v4.0.3/packages/browser/src/client/tester/tester-utils.ts#L170
     const iframe = window.parent.document.querySelector(`iframe[data-vitest]`)
     if (!iframe) {
       throw new Error(
@@ -15,26 +16,11 @@ export class IframeTransform {
       )
     }
 
-    const testerUi = iframe.parentElement
-    if (!testerUi) {
-      throw new Error(
-        `Cannot find Tester element. This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
-      )
-    }
-
-    const scaleAttribute = testerUi.getAttribute('data-scale')
-    const scale = Number(scaleAttribute)
-    if (Number.isNaN(scale)) {
-      throw new TypeError(
-        `Cannot parse scale value from Tester element (${scaleAttribute}). This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
-      )
-    }
-
     const rect = iframe.getBoundingClientRect()
 
     this.iframeX = rect.x
     this.iframeY = rect.y
-    this.iframeScale = scale
+    this.iframeScale = getIframeScale()
   }
 
   /**
