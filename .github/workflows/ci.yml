@@ -47,6 +47,11 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install playwright
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: pnpm run prepare:playwright --with-deps
+
+      - name: Install playwright
+        if: ${{ matrix.os != 'ubuntu-latest' }}
         run: pnpm run prepare:playwright
 
       - name: Build
