@@ -1,0 +1,77 @@
+{
+  "name": "vitest-browser-commands",
+  "type": "module",
+  "version": "0.2.1",
+  "description": "A set of custom server commands for Vitest browser mode",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/vitest-browser-commands#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ocavue/vitest-browser-commands.git",
+    "directory": "packages/vitest-browser-commands"
+  },
+  "bugs": "https://github.com/ocavue/vitest-browser-commands/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./playwright": "./src/playwright/browser.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
+      "playwright": [
+        "./dist/playwright.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "peerDependencies": {
+    "@vitest/browser-playwright": "^4.0.3",
+    "vitest": "^4.0.3"
+  },
+  "peerDependenciesMeta": {
+    "@vitest/browser-playwright": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@ocavue/tsconfig": "^0.7.1",
+    "@types/node": "^22.19.0",
+    "@vitest/browser-playwright": "^4.1.10",
+    "tsdown": "^0.22.14",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      "./playwright": {
+        "types": "./dist/playwright.d.ts",
+        "import": "./dist/playwright.js"
+      }
+    }
+  }
+}

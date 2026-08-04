@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
-
-import { keyboard } from '../../src/playwright/browser'
+import { keyboard } from 'vitest-browser-commands/playwright'
 
 describe('keyboard', () => {
   describe('type', () => {

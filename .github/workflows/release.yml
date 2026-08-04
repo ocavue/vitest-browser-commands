@@ -13,6 +13,7 @@ jobs:
         id: release-please
         with:
           release-type: node
+          path: packages/vitest-browser-commands
     outputs:
       release_created: ${{ steps.release-please.outputs.release_created }}
 
@@ -32,4 +33,4 @@ jobs:
         run: pnpm run build
 
       - name: Publish to NPM
-        run: pnpm publish
+        run: pnpm --filter vitest-browser-commands publish
