@@ -62,9 +62,6 @@ importers:
       '@types/node':
         specifier: ^22.19.0
         version: 22.19.19
-      '@vitest/browser':
-        specifier: ^4.1.10
-        version: 4.1.10(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))(vitest@4.1.10)
       '@vitest/browser-playwright':
         specifier: ^4.1.10
         version: 4.1.10(playwright@1.62.1)(vite@8.2.0(@types/node@22.19.19)(jiti@2.6.1)(yaml@2.9.0))(vitest@4.1.10)
