@@ -1,79 +1,24 @@
 {
-  "name": "vitest-browser-commands",
+  "name": "vitest-browser-commands-monorepo",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.0.0",
+  "private": true,
   "packageManager": "pnpm@11.20.0",
-  "description": "A set of custom server commands for Vitest browser mode",
-  "author": "ocavue <ocavue@gmail.com>",
-  "license": "MIT",
-  "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/vitest-browser-commands#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ocavue/vitest-browser-commands.git"
-  },
-  "bugs": "https://github.com/ocavue/vitest-browser-commands/issues",
-  "keywords": [],
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./playwright": {
-      "types": "./dist/playwright.d.ts",
-      "import": "./dist/playwright.js"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/index.d.ts"
-      ],
-      "playwright": [
-        "./dist/playwright.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
+    "build": "pnpm -r run build",
     "lint": "eslint .",
     "fix": "eslint --fix . && prettier --write .",
-    "test": "vitest",
+    "test": "pnpm -r run test",
     "typecheck": "tsc -b",
     "prepare:playwright": "playwright install"
-  },
-  "peerDependencies": {
-    "@vitest/browser-playwright": "^4.0.3",
-    "vitest": "^4.0.3"
-  },
-  "peerDependenciesMeta": {
-    "@vitest/browser-playwright": {
-      "optional": true
-    },
-    "vitest": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@ocavue/eslint-config": "^4.13.0",
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^22.19.0",
-    "@vitest/browser-playwright": "^4.1.10",
     "eslint": "^10.8.0",
     "playwright": "^1.62.1",
     "prettier": "^3.9.6",
-    "tsdown": "^0.22.14",
-    "typescript": "^6.0.3",
-    "vite": "^8.2.0",
-    "vitest": "^4.1.10"
+    "typescript": "^6.0.3"
   }
 }

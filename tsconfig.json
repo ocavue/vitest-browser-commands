@@ -1,7 +1,11 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
-  "compilerOptions": {
-    "declarationMap": false,
-    "sourceMap": false
-  }
+  "extends": "@ocavue/tsconfig/dom/root.json",
+  "references": [
+    {
+      "path": "./packages/vitest-browser-commands/tsconfig.json"
+    },
+    {
+      "path": "./test/playwright/tsconfig.json"
+    }
+  ]
 }

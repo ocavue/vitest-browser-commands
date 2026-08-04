@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
-
-import { mouse } from '../../src/playwright/browser'
+import { mouse } from 'vitest-browser-commands/playwright'
 
 describe('mouse', () => {
   describe('move', () => {
