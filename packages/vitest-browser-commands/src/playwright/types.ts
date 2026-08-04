@@ -1,8 +1,6 @@
-import type { PlaywrightBrowserProvider } from '@vitest/browser-playwright'
+import type { Page } from 'playwright'
 
-export type Page = ReturnType<
-  PlaywrightBrowserProvider['getCommandsContext']
->['page']
+export type { Page }
 
 export type Mouse = Page['mouse']
 

@@ -1,4 +1,4 @@
-import type { Plugin } from 'vitest/config'
+import type { Plugin } from 'vite'
 
 import { playwrightKeyboardDown } from './commands/keyboard-down.node.ts'
 import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.node.ts'
