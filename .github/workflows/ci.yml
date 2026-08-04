@@ -30,13 +30,27 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
+  discover-test-suites:
+    runs-on: ubuntu-latest
+    outputs:
+      suites: ${{ steps.suites.outputs.suites }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: List test suites
+        id: suites
+        run: echo "suites=$(ls test | jq --raw-input | jq --slurp --compact-output)" >> "$GITHUB_OUTPUT"
+
   test:
     runs-on: ${{ matrix.os }}
+
+    needs: [discover-test-suites]
 
     strategy:
       matrix:
         node: [22.x, 24.x, 26.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
+        suite: ${{ fromJSON(needs.discover-test-suites.outputs.suites) }}
       fail-fast: false
 
     steps:
@@ -53,7 +67,7 @@ jobs:
         run: pnpm run build
 
       - name: Test
-        run: pnpm run test
+        run: pnpm --filter ./test/${{ matrix.suite }} run test
 
   all-green:
     runs-on: ubuntu-slim
