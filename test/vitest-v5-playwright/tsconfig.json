@@ -1,0 +1,12 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "sourceMap": false
+  },
+  "references": [
+    {
+      "path": "../../packages/vitest-browser-commands/tsconfig.json"
+    }
+  ]
+}

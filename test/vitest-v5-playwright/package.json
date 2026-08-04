@@ -1,5 +1,5 @@
 {
-  "name": "test-playwright",
+  "name": "test-vitest-v5-playwright",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -9,10 +9,10 @@
   "devDependencies": {
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^22.19.0",
-    "@vitest/browser-playwright": "^4.1.10",
+    "@vitest/browser-playwright": "5.0.0-beta.7",
     "playwright": "^1.62.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.10",
+    "vitest": "5.0.0-beta.7",
     "vitest-browser-commands": "workspace:*"
   }
 }

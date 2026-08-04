@@ -5,7 +5,10 @@
       "path": "./packages/vitest-browser-commands/tsconfig.json"
     },
     {
-      "path": "./test/playwright/tsconfig.json"
+      "path": "./test/vitest-v4-playwright/tsconfig.json"
+    },
+    {
+      "path": "./test/vitest-v5-playwright/tsconfig.json"
     }
   ]
 }
