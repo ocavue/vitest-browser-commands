@@ -1,6 +1,5 @@
 import { getIframeScale } from '@vitest/browser/locators'
 
-
 function getIframe() {
   // https://github.com/vitest-dev/vitest/blob/v5.0.0-beta.7/packages/browser/src/client/tester/tester-utils.ts#L258
   {
@@ -8,16 +7,15 @@ function getIframe() {
     if (iframe) return iframe
   }
 
-  // https://github.com/vitest-dev/vitest/blob/v4.0.3/packages/browser/src/client/tester/tester-utils.ts#L170
+  // https://github.com/vitest-dev/vitest/blob/v4.1.10/packages/browser/src/client/tester/tester-utils.ts#L227
   {
     const iframe = window.parent.document.querySelector(`iframe[data-vitest]`)
     if (iframe) return iframe
   }
 
-    throw new Error(
-      `Cannot find iframe element. This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
-    )
-
+  throw new Error(
+    `Cannot find iframe element. This is a bug in vitest-browser-commands. Please, open a new issue with reproduction.`,
+  )
 }
 
 /**
