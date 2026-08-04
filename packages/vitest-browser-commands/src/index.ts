@@ -1,1 +1,1 @@
-export { playwrightCommands } from './playwright/node'
+export { playwrightCommands } from './playwright/node.ts'

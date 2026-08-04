@@ -1,6 +1,6 @@
 import { commands } from 'vitest/browser'
 
-import type { PlaywrightKeyboardInsertText } from './keyboard-insert-text.node'
+import type { PlaywrightKeyboardInsertText } from './keyboard-insert-text.node.ts'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {

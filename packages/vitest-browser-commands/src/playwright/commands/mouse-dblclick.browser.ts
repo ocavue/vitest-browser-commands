@@ -1,8 +1,8 @@
 import { commands } from 'vitest/browser'
 
-import { IframeTransform } from '../helpers'
+import { IframeTransform } from '../helpers.ts'
 
-import type { PlaywrightMouseDblclick } from './mouse-dblclick.node'
+import type { PlaywrightMouseDblclick } from './mouse-dblclick.node.ts'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {

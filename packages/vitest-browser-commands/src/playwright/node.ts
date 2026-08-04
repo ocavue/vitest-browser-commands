@@ -1,16 +1,16 @@
 import type { Plugin } from 'vitest/config'
 
-import { playwrightKeyboardDown } from './commands/keyboard-down.node'
-import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.node'
-import { playwrightKeyboardPress } from './commands/keyboard-press.node'
-import { playwrightKeyboardType } from './commands/keyboard-type.node'
-import { playwrightKeyboardUp } from './commands/keyboard-up.node'
-import { playwrightMouseClick } from './commands/mouse-click.node'
-import { playwrightMouseDblclick } from './commands/mouse-dblclick.node'
-import { playwrightMouseDown } from './commands/mouse-down.node'
-import { playwrightMouseMove } from './commands/mouse-move.node'
-import { playwrightMouseUp } from './commands/mouse-up.node'
-import { playwrightMouseWheel } from './commands/mouse-wheel.node'
+import { playwrightKeyboardDown } from './commands/keyboard-down.node.ts'
+import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.node.ts'
+import { playwrightKeyboardPress } from './commands/keyboard-press.node.ts'
+import { playwrightKeyboardType } from './commands/keyboard-type.node.ts'
+import { playwrightKeyboardUp } from './commands/keyboard-up.node.ts'
+import { playwrightMouseClick } from './commands/mouse-click.node.ts'
+import { playwrightMouseDblclick } from './commands/mouse-dblclick.node.ts'
+import { playwrightMouseDown } from './commands/mouse-down.node.ts'
+import { playwrightMouseMove } from './commands/mouse-move.node.ts'
+import { playwrightMouseUp } from './commands/mouse-up.node.ts'
+import { playwrightMouseWheel } from './commands/mouse-wheel.node.ts'
 
 /**
  * Returns a vite plugin that adds some useful playwright commands to the vitest browser commands context

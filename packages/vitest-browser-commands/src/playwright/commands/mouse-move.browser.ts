@@ -1,8 +1,8 @@
 import { commands } from 'vitest/browser'
 
-import { IframeTransform } from '../helpers'
+import { IframeTransform } from '../helpers.ts'
 
-import type { PlaywrightMouseMove } from './mouse-move.node'
+import type { PlaywrightMouseMove } from './mouse-move.node.ts'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {

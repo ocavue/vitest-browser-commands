@@ -1,6 +1,6 @@
 import { commands } from 'vitest/browser'
 
-import type { PlaywrightMouseDown } from './mouse-down.node'
+import type { PlaywrightMouseDown } from './mouse-down.node.ts'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {

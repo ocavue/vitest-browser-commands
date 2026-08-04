@@ -1,6 +1,6 @@
 import type { BrowserCommand } from 'vitest/node'
 
-import type { Mouse } from '../types'
+import type { Mouse } from '../types.ts'
 
 export type PlaywrightMouseWheel = Mouse['wheel']
 

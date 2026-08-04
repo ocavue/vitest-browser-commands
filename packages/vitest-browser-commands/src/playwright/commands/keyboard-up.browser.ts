@@ -1,6 +1,6 @@
 import { commands } from 'vitest/browser'
 
-import type { PlaywrightKeyboardUp } from './keyboard-up.node'
+import type { PlaywrightKeyboardUp } from './keyboard-up.node.ts'
 
 declare module 'vitest/browser' {
   interface BrowserCommands {

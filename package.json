@@ -8,7 +8,7 @@
     "build": "pnpm -r run build",
     "lint": "eslint .",
     "fix": "eslint --fix . && prettier --write .",
-    "test": "vitest",
+    "test": "pnpm -r run test",
     "typecheck": "tsc -b",
     "prepare:playwright": "playwright install"
   },
@@ -19,7 +19,6 @@
     "eslint": "^10.8.0",
     "playwright": "^1.62.1",
     "prettier": "^3.9.6",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
+    "typescript": "^6.0.3"
   }
 }

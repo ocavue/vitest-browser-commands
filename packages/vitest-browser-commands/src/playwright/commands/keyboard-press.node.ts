@@ -1,6 +1,6 @@
 import type { BrowserCommand } from 'vitest/node'
 
-import type { Keyboard } from '../types'
+import type { Keyboard } from '../types.ts'
 
 export type PlaywrightKeyboardPress = Keyboard['press']
 
