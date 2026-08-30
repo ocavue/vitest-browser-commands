@@ -15,7 +15,7 @@ jobs:
           release-type: node
           path: packages/vitest-browser-commands
     outputs:
-      release_created: ${{ steps.release-please.outputs.release_created }}
+      releases_created: ${{ steps.release-please.outputs.releases_created }}
 
   publish:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    if: ${{ needs.version.outputs.release_created }}
+    if: ${{ needs.version.outputs.releases_created == 'true' }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
