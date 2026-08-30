@@ -179,16 +179,21 @@ function createTestForm(): HTMLFormElement {
 }
 
 async function focusInput(input: HTMLInputElement): Promise<void> {
-  input.focus()
   await vi.waitFor(
-    () => {
-      if (!document.hasFocus()) {
-        window.focus()
-        throw new Error('document does not have focus')
+    async () => {
+      input.focus()
+      let received = false
+      const listener = () => {
+        received = true
       }
-      if (document.activeElement !== input) {
-        input.focus()
-        throw new Error('input is not the active element')
+      input.addEventListener('keydown', listener)
+      try {
+        await keyboard.press('Shift')
+      } finally {
+        input.removeEventListener('keydown', listener)
+      }
+      if (!received) {
+        throw new Error('input did not receive the probe key press')
       }
     },
     { timeout: 5000 },
