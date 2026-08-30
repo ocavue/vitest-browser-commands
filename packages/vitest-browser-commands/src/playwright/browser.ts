@@ -44,14 +44,12 @@ export const keyboard: Keyboard = {
 }
 
 /**
- * A wrapper around a subset of the Playwright [Page API](https://playwright.dev/docs/api/class-page).
+ * A wrapper around the Playwright [`page.requestGC()`](https://playwright.dev/docs/api/class-page#page-request-gc) API.
  *
- * In your vitest test code running on the browser, you can use this object to
- * call page-level Playwright APIs. It will call the appropriate Playwright API
- * under the hood.
+ * In your vitest test code running on the browser, you can call this function
+ * to request the browser to perform garbage collection. It will call the
+ * appropriate Playwright API under the hood.
  */
-export const page: Pick<Page, 'requestGC'> = {
-  requestGC: playwrightPageRequestGC,
-}
+export const requestGC: Page['requestGC'] = playwrightPageRequestGC
 
 export { type Mouse, type Keyboard }

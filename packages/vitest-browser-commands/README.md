@@ -118,15 +118,15 @@ await keyboard.type(text, options)
 await keyboard.insertText(text)
 ```
 
-#### `page`
+#### `requestGC`
 
-The `page` object is a wrapper around a subset of the Playwright [Page API](https://playwright.dev/docs/api/class-page). Currently, it supports the following methods:
+The `requestGC` function is a wrapper around the Playwright [`page.requestGC()`](https://playwright.dev/docs/api/class-page#page-request-gc) API. It requests the browser to perform garbage collection, which is useful for detecting memory leaks in your tests.
 
 ```ts
 // tests/browser.test.ts
-import { page } from 'vitest-browser-commands/playwright'
+import { requestGC } from 'vitest-browser-commands/playwright'
 
-await page.requestGC()
+await requestGC()
 ```
 
 ## Sponsors
