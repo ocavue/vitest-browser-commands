@@ -93,10 +93,10 @@ importers:
         specifier: ^24.13.3
         version: 24.13.3
       '@vitest/browser':
-        specifier: ^5.0.0-rc.1
+        specifier: ^5.0.0-rc.3
         version: 5.0.0-rc.3(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.0-rc.3)
       '@vitest/browser-playwright':
-        specifier: ^5.0.0-rc.1
+        specifier: ^5.0.0-rc.3
         version: 5.0.0-rc.3(playwright@1.62.1)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))(vitest@5.0.0-rc.3)
       playwright:
         specifier: ^1.62.1
@@ -108,7 +108,7 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
       vitest:
-        specifier: ^5.0.0-rc.1
+        specifier: ^5.0.0-rc.3
         version: 5.0.0-rc.3(@types/node@24.13.3)(@vitest/browser-playwright@5.0.0-rc.3)(@vitest/ui@5.0.0-rc.3)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       vitest-browser-commands:
         specifier: workspace:*
