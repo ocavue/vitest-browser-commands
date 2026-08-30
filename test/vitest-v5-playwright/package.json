@@ -16,5 +16,10 @@
     "vite": "^8.2.0",
     "vitest": "^5.0.0-rc.3",
     "vitest-browser-commands": "workspace:*"
+  },
+  "dependenciesMeta": {
+    "vitest-browser-commands": {
+      "injected": true
+    }
   }
 }

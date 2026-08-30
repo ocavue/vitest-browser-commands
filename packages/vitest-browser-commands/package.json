@@ -15,11 +15,18 @@
   "bugs": "https://github.com/ocavue/vitest-browser-commands/issues",
   "keywords": [],
   "sideEffects": false,
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./playwright": "./src/playwright/browser.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./playwright": {
+      "types": "./dist/playwright.d.ts",
+      "import": "./dist/playwright.js"
+    }
   },
   "typesVersions": {
     "*": {
@@ -73,20 +80,5 @@
     "typescript": "^6.0.3",
     "vite": "^8.2.0",
     "vitest": "^4.1.10"
-  },
-  "publishConfig": {
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.js"
-      },
-      "./playwright": {
-        "types": "./dist/playwright.d.ts",
-        "import": "./dist/playwright.js"
-      }
-    }
   }
 }

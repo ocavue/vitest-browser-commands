@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "fix": "eslint --fix . && prettier --write .",
     "test": "pnpm -r run -s test",
-    "typecheck": "tsc -b",
+    "typecheck": "pnpm run build && tsc -b",
     "prepare:playwright": "playwright install"
   },
   "devDependencies": {
