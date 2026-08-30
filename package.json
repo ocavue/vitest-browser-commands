@@ -6,10 +6,10 @@
   "packageManager": "pnpm@11.20.0",
   "scripts": {
     "build": "pnpm -r run build",
-    "lint": "pnpm run build && eslint .",
-    "fix": "pnpm run build && eslint --fix . && prettier --write .",
+    "lint": "eslint .",
+    "fix": "eslint --fix . && prettier --write .",
     "test": "pnpm -r run -s test",
-    "typecheck": "pnpm run build && tsc -b",
+    "typecheck": "tsc -b",
     "prepare:playwright": "playwright install"
   },
   "devDependencies": {
