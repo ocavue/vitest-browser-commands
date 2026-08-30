@@ -118,6 +118,17 @@ await keyboard.type(text, options)
 await keyboard.insertText(text)
 ```
 
+#### `page`
+
+The `page` object is a wrapper around a subset of the Playwright [Page API](https://playwright.dev/docs/api/class-page). Currently, it supports the following methods:
+
+```ts
+// tests/browser.test.ts
+import { page } from 'vitest-browser-commands/playwright'
+
+await page.requestGC()
+```
+
 ## Sponsors
 
 <p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>

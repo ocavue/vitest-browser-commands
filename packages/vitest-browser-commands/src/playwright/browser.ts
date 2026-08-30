@@ -9,7 +9,8 @@ import { playwrightMouseDown } from './commands/mouse-down.browser.ts'
 import { playwrightMouseMove } from './commands/mouse-move.browser.ts'
 import { playwrightMouseUp } from './commands/mouse-up.browser.ts'
 import { playwrightMouseWheel } from './commands/mouse-wheel.browser.ts'
-import type { Keyboard, Mouse } from './types.ts'
+import { playwrightPageRequestGC } from './commands/page-request-gc.browser.ts'
+import type { Keyboard, Mouse, Page } from './types.ts'
 
 /**
  * A wrapper around the Playwright [Mouse API](https://playwright.dev/docs/api/class-mouse).
@@ -40,6 +41,17 @@ export const keyboard: Keyboard = {
   press: playwrightKeyboardPress,
   type: playwrightKeyboardType,
   up: playwrightKeyboardUp,
+}
+
+/**
+ * A wrapper around a subset of the Playwright [Page API](https://playwright.dev/docs/api/class-page).
+ *
+ * In your vitest test code running on the browser, you can use this object to
+ * call page-level Playwright APIs. It will call the appropriate Playwright API
+ * under the hood.
+ */
+export const page: Pick<Page, 'requestGC'> = {
+  requestGC: playwrightPageRequestGC,
 }
 
 export { type Mouse, type Keyboard }
