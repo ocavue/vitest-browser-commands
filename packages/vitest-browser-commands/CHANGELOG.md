@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/ocavue/vitest-browser-commands/compare/v0.4.0...v0.4.1) (2026-08-30)
+
+
+### Bug Fixes
+
+* remove `typesVersions` from `package.json` ([#48](https://github.com/ocavue/vitest-browser-commands/issues/48)) ([b115ef0](https://github.com/ocavue/vitest-browser-commands/commit/b115ef0646bdbe8cc371e04a161172f8922ae5d3))
+
 ## [0.4.0](https://github.com/ocavue/vitest-browser-commands/compare/v0.3.0...v0.4.0) (2026-08-30)
 
 
