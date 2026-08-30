@@ -178,8 +178,6 @@ function createTestForm(): HTMLFormElement {
   return form
 }
 
-// WebKit hands keyboard focus to the tester iframe asynchronously; typing
-// before the handoff settles drops the first key.
 async function focusInput(input: HTMLInputElement): Promise<void> {
   input.focus()
   await vi.waitFor(
