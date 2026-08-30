@@ -28,16 +28,6 @@
       "import": "./dist/playwright.js"
     }
   },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/index.d.ts"
-      ],
-      "playwright": [
-        "./dist/playwright.d.ts"
-      ]
-    }
-  },
   "files": [
     "dist",
     "src"
