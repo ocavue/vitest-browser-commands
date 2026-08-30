@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@ocavue/tsconfig": "^0.7.1",
-    "@types/node": "^22.19.0",
+    "@types/node": "^24.13.3",
     "@vitest/browser": "5.0.0-beta.7",
     "@vitest/browser-playwright": "5.0.0-beta.7",
     "playwright": "^1.62.1",
