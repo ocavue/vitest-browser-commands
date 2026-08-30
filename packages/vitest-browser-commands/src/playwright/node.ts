@@ -11,6 +11,7 @@ import { playwrightMouseDown } from './commands/mouse-down.node.ts'
 import { playwrightMouseMove } from './commands/mouse-move.node.ts'
 import { playwrightMouseUp } from './commands/mouse-up.node.ts'
 import { playwrightMouseWheel } from './commands/mouse-wheel.node.ts'
+import { playwrightRequestGC } from './commands/request-gc.node.ts'
 
 /**
  * Returns a vite plugin that adds some useful playwright commands to the vitest browser commands context
@@ -34,6 +35,7 @@ export function playwrightCommands(): Plugin {
               playwrightMouseMove,
               playwrightMouseUp,
               playwrightMouseWheel,
+              playwrightRequestGC,
             },
           },
         },

@@ -118,6 +118,17 @@ await keyboard.type(text, options)
 await keyboard.insertText(text)
 ```
 
+#### `requestGC`
+
+The `requestGC` function is a wrapper around the Playwright [`page.requestGC()`](https://playwright.dev/docs/api/class-page#page-request-gc) API. It requests the browser to perform garbage collection, which is useful for detecting memory leaks in your tests.
+
+```ts
+// tests/browser.test.ts
+import { requestGC } from 'vitest-browser-commands/playwright'
+
+await requestGC()
+```
+
 ## Sponsors
 
 <p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>
