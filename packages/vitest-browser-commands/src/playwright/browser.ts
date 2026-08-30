@@ -9,7 +9,7 @@ import { playwrightMouseDown } from './commands/mouse-down.browser.ts'
 import { playwrightMouseMove } from './commands/mouse-move.browser.ts'
 import { playwrightMouseUp } from './commands/mouse-up.browser.ts'
 import { playwrightMouseWheel } from './commands/mouse-wheel.browser.ts'
-import { playwrightPageRequestGC } from './commands/page-request-gc.browser.ts'
+import { playwrightRequestGC } from './commands/request-gc.browser.ts'
 import type { Keyboard, Mouse, Page } from './types.ts'
 
 /**
@@ -50,6 +50,6 @@ export const keyboard: Keyboard = {
  * to request the browser to perform garbage collection. It will call the
  * appropriate Playwright API under the hood.
  */
-export const requestGC: Page['requestGC'] = playwrightPageRequestGC
+export const requestGC: Page['requestGC'] = playwrightRequestGC
 
 export { type Mouse, type Keyboard }

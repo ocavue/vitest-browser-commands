@@ -3,11 +3,11 @@ import type { BrowserCommand } from 'vitest/node'
 import { getPage } from '../context.ts'
 import type { Page } from '../types.ts'
 
-export type PlaywrightPageRequestGC = Page['requestGC']
+export type PlaywrightRequestGC = Page['requestGC']
 
-export const playwrightPageRequestGC: BrowserCommand<
-  Parameters<PlaywrightPageRequestGC>,
-  ReturnType<PlaywrightPageRequestGC>
+export const playwrightRequestGC: BrowserCommand<
+  Parameters<PlaywrightRequestGC>,
+  ReturnType<PlaywrightRequestGC>
 > = (ctx, ...args) => {
   return getPage(ctx).requestGC(...args)
 }
