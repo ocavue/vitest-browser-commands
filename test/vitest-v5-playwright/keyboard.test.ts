@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
 
 describe('keyboard', () => {
   describe('type', () => {
     it('should type text into a focused input', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
 
       await keyboard.type('Hello World')
 
@@ -22,7 +22,7 @@ describe('keyboard', () => {
 
     it('should type with delay option', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
 
       await keyboard.type('Test', { delay: 10 })
 
@@ -33,7 +33,7 @@ describe('keyboard', () => {
   describe('press', () => {
     it('should press a single key', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       input.value = 'Hello'
 
       await keyboard.press('Backspace')
@@ -49,7 +49,7 @@ describe('keyboard', () => {
         e.preventDefault()
         formSubmitted = true
       })
-      input.focus()
+      await focusInput(input)
 
       await keyboard.press('Enter')
 
@@ -58,7 +58,7 @@ describe('keyboard', () => {
 
     it('should press key combinations with modifiers', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
 
       await keyboard.press('Shift+KeyA')
 
@@ -69,7 +69,7 @@ describe('keyboard', () => {
   describe('down and up', () => {
     it('should trigger keydown event', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       let keyDownTriggered = false
       let keyPressed = ''
 
@@ -86,7 +86,7 @@ describe('keyboard', () => {
 
     it('should trigger keyup event', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       let keyUpTriggered = false
       let keyPressed = ''
 
@@ -104,7 +104,7 @@ describe('keyboard', () => {
 
     it('should handle modifier keys', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       let shiftPressed = false
 
       input.addEventListener('keydown', (e) => {
@@ -123,7 +123,7 @@ describe('keyboard', () => {
   describe('insertText', () => {
     it('should insert text without triggering keyboard events', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       let keydownTriggered = false
 
       input.addEventListener('keydown', () => {
@@ -138,7 +138,7 @@ describe('keyboard', () => {
 
     it('should insert text at cursor position', async () => {
       const input = createTestInput()
-      input.focus()
+      await focusInput(input)
       input.value = 'Hello World'
       input.setSelectionRange(5, 5)
 
@@ -176,4 +176,26 @@ function createTestForm(): HTMLFormElement {
 
   document.body.appendChild(form)
   return form
+}
+
+async function focusInput(input: HTMLInputElement): Promise<void> {
+  await vi.waitFor(
+    async () => {
+      input.focus()
+      let received = false
+      const listener = () => {
+        received = true
+      }
+      input.addEventListener('keydown', listener)
+      try {
+        await keyboard.press('Shift')
+      } finally {
+        input.removeEventListener('keydown', listener)
+      }
+      if (!received) {
+        throw new Error('input did not receive the probe key press')
+      }
+    },
+    { timeout: 5000 },
+  )
 }

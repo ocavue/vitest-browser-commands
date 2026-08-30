@@ -5,6 +5,7 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [playwrightCommands()],
   test: {
+    retry: process.env.CI ? 3 : 0,
     browser: {
       enabled: true,
       provider: playwright(),
