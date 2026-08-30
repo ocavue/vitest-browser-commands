@@ -1,7 +1,7 @@
 {
   "name": "vitest-browser-commands",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A set of custom server commands for Vitest browser mode",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
