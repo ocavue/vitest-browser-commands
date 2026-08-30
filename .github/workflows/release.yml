@@ -33,4 +33,4 @@ jobs:
         run: pnpm run build
 
       - name: Publish to NPM
-        run: pnpm --filter vitest-browser-commands publish --no-git-checks
+        run: pnpm --filter vitest-browser-commands publish
