@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@11.25.0",
   "scripts": {
     "build": "pnpm -r run build",
     "lint": "eslint .",
@@ -13,7 +13,7 @@
     "prepare:playwright": "playwright install"
   },
   "devDependencies": {
-    "@ocavue/eslint-config": "^4.13.0",
+    "@ocavue/eslint-config": "^4.16.1",
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^24.13.3",
     "eslint": "^10.8.0",
