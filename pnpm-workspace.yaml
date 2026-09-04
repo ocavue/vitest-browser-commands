@@ -10,13 +10,5 @@ allowBuilds:
   unrs-resolver: false
 ignoreWorkspaceRootCheck: true
 minimumReleaseAgeExclude:
-  - '@ocavue/eslint-config@4.13.0'
-  - eslint-plugin-unicorn@73.0.0
-  - '@vitest/browser-playwright@5.0.0'
-  - '@vitest/browser@5.0.0'
-  - '@vitest/mocker@5.0.0'
-  - '@vitest/pretty-format@5.0.0'
-  - '@vitest/spy@5.0.0'
-  - '@vitest/ui@5.0.0'
-  - '@vitest/utils@5.0.0'
-  - vitest@5.0.0
+  - '@vitest/*'
+  - vitest
