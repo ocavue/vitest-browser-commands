@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite'
 
+import { playwrightEmulateMedia } from './commands/emulate-media.node.ts'
 import { playwrightKeyboardDown } from './commands/keyboard-down.node.ts'
 import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.node.ts'
 import { playwrightKeyboardPress } from './commands/keyboard-press.node.ts'
@@ -24,6 +25,7 @@ export function playwrightCommands(): Plugin {
         test: {
           browser: {
             commands: {
+              playwrightEmulateMedia,
               playwrightKeyboardDown,
               playwrightKeyboardInsertText,
               playwrightKeyboardPress,

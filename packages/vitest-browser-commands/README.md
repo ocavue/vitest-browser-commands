@@ -129,6 +129,19 @@ import { requestGC } from 'vitest-browser-commands/playwright'
 await requestGC()
 ```
 
+#### `emulateMedia`
+
+The `emulateMedia` function is a wrapper around the Playwright [`page.emulateMedia()`](https://playwright.dev/docs/api/class-page#page-emulate-media) API. It changes the CSS media type and media features like `prefers-color-scheme` and `prefers-reduced-motion`. The emulation stays active until you change it again, so pass `null` to reset an option once the test is done. Firefox applies the change to the test iframe slightly after the call resolves, so poll (e.g. `expect.poll`) when you assert on `matchMedia` right away.
+
+```ts
+// tests/browser.test.ts
+import { emulateMedia } from 'vitest-browser-commands/playwright'
+
+await emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' })
+
+await emulateMedia({ colorScheme: null, reducedMotion: null })
+```
+
 ## Sponsors
 
 <p align="center"><a href="https://github.com/sponsors/ocavue"><img src="https://cdn.jsdelivr.net/gh/ocavue/sponsors/sponsorkit/sponsors.svg" alt="My Sponsors"></a></p>

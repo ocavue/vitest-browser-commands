@@ -1,3 +1,4 @@
+import { playwrightEmulateMedia } from './commands/emulate-media.browser.ts'
 import { playwrightKeyboardDown } from './commands/keyboard-down.browser.ts'
 import { playwrightKeyboardInsertText } from './commands/keyboard-insert-text.browser.ts'
 import { playwrightKeyboardPress } from './commands/keyboard-press.browser.ts'
@@ -51,5 +52,15 @@ export const keyboard: Keyboard = {
  * appropriate Playwright API under the hood.
  */
 export const requestGC: Page['requestGC'] = playwrightRequestGC
+
+/**
+ * A wrapper around the Playwright [`page.emulateMedia()`](https://playwright.dev/docs/api/class-page#page-emulate-media) API.
+ *
+ * In your vitest test code running on the browser, you can call this function
+ * to change the CSS media type and media features (e.g. `colorScheme` and
+ * `reducedMotion`). It will call the appropriate Playwright API under the
+ * hood. Passing `null` for an option resets it to the default.
+ */
+export const emulateMedia: Page['emulateMedia'] = playwrightEmulateMedia
 
 export { type Mouse, type Keyboard }
