@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/ocavue/vitest-browser-commands/compare/v0.4.1...v0.5.0) (2026-09-20)
+
+
+### Features
+
+* add `emulateMedia` ([#53](https://github.com/ocavue/vitest-browser-commands/issues/53)) ([a501ad1](https://github.com/ocavue/vitest-browser-commands/commit/a501ad1ee8178f264ba4d02a48ddaf7527d5870d))
+
 ## [0.4.1](https://github.com/ocavue/vitest-browser-commands/compare/v0.4.0...v0.4.1) (2026-08-30)
 
 
