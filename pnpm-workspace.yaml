@@ -8,7 +8,9 @@ syncInjectedDepsAfterScripts:
 allowBuilds:
   esbuild: false
   unrs-resolver: false
+
 ignoreWorkspaceRootCheck: true
+
 minimumReleaseAgeExclude:
   - '@vitest/*'
   - vitest
