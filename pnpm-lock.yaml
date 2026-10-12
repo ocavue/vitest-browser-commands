@@ -88,7 +88,7 @@ importers:
         version: 4.1.11(@types/node@24.13.3)(@vitest/browser-playwright@4.1.11)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))
       vitest-browser-commands:
         specifier: workspace:*
-        version: link:../../packages/vitest-browser-commands
+        version: file:packages/vitest-browser-commands(@vitest/browser-playwright@4.1.11)(@vitest/browser@4.1.11(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11))(playwright@1.64.0)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11)
 
   test/vitest-v5-playwright:
     dependenciesMeta:
@@ -2072,6 +2072,26 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  vitest-browser-commands@file:packages/vitest-browser-commands:
+    resolution: {directory: packages/vitest-browser-commands, type: directory}
+    peerDependencies:
+      '@vitest/browser': ^4.0.0 || ^5.0.0-beta.7
+      '@vitest/browser-playwright': ^4.0.3 || ^5.0.0-beta.7
+      playwright: '*'
+      vite: '*'
+      vitest: ^4.0.3 || ^5.0.0-beta.7
+    peerDependenciesMeta:
+      '@vitest/browser':
+        optional: true
+      '@vitest/browser-playwright':
+        optional: true
+      playwright:
+        optional: true
+      vite:
+        optional: true
+      vitest:
         optional: true
 
   vitest@4.1.11:
@@ -4428,6 +4448,14 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.7.0
       yaml: 2.9.1
+
+  vitest-browser-commands@file:packages/vitest-browser-commands(@vitest/browser-playwright@4.1.11)(@vitest/browser@4.1.11(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11))(playwright@1.64.0)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11):
+    optionalDependencies:
+      '@vitest/browser': 4.1.11(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11)
+      '@vitest/browser-playwright': 4.1.11(playwright@1.64.0)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))(vitest@4.1.11)
+      playwright: 1.64.0
+      vite: 8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1)
+      vitest: 4.1.11(@types/node@24.13.3)(@vitest/browser-playwright@4.1.11)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1))
 
   vitest@4.1.11(@types/node@24.13.3)(@vitest/browser-playwright@4.1.11)(vite@8.3.4(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
