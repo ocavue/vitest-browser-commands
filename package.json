@@ -13,11 +13,11 @@
     "prepare:playwright": "playwright install"
   },
   "devDependencies": {
-    "@ocavue/eslint-config": "^4.22.0",
+    "@ocavue/eslint-config": "^4.23.0",
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^24.13.3",
     "eslint": "^10.14.0",
-    "playwright": "^1.64.0",
+    "playwright": "^1.65.0",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3"
   }
